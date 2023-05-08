@@ -7,6 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
+const users_routes_1 = __importDefault(require("./routes/users.routes"));
 //middlewares:
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
@@ -14,6 +15,7 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
+app.use('/users', users_routes_1.default);
 //server:
 app.listen(port || 3000, () => {
     console.log(`app listening at http://localhost:${port}`);
