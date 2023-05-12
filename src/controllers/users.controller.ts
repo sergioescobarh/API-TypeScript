@@ -10,7 +10,7 @@ type User = {
     role: USERROLE;
     email: string;
     password: string;
-    shores: string[];
+    // shores: string[];
 };
 
 const userController = {
